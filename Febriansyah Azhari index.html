@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yannsz Kuliner | E-Commerce Kuliner</title>
+    <style>
+        :root { --gold: #b89530; --dark: #2d2d2d; --light: #f9f9f9; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: var(--light); color: var(--dark); }
+        
+        header { text-align: center; padding: 40px 20px; background: white; border-bottom: 3px solid var(--gold); }
+        header h1 { margin: 0; font-size: 2.5em; letter-spacing: 2px; color: var(--gold); }
+        header p { margin: 5px 0; color: #666; }
+
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
+        h2 { text-align: center; margin: 40px 0 20px; text-transform: uppercase; letter-spacing: 1px; }
+
+        .menu-grid { 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 25px; 
+            margin-bottom: 50px;
+        }
+
+        .card { 
+            background: white; 
+            border-radius: 15px; 
+            overflow: hidden; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .card:hover { transform: translateY(-5px); }
+        .card img { width: 100%; height: 250px; object-fit: cover; }
+        
+        .card-info { padding: 20px; text-align: center; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .card-info h3 { margin: 10px 0; font-size: 1.2em; }
+        .card-info p { color: #777; font-size: 0.9em; margin-bottom: 15px; }
+        .price { font-weight: bold; color: var(--gold); font-size: 1.1em; display: block; margin-bottom: 15px; }
+        
+        .btn-buy { 
+            background: var(--gold); color: white; border: none; 
+            padding: 12px 25px; border-radius: 25px; cursor: pointer;
+            font-weight: bold; transition: 0.3s; width: 100%;
+        }
+        .btn-buy:hover { background: var(--dark); }
+
+        @media (max-width: 600px) { .menu-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Yannsz Kuliner</h1>
+    <p>📍 Jl. Prumpung Tengah, Jakarta Timur, Cipinang Besar Utara, Kecamatan Jatinegara. </p>
+    <p><i>"Kelezatan di Setiap Gigitan, Kesegaran di Setiap Tegukan"</i></p>
+</header>
+
+<div class="container">
+    <h2>— Signature Foods —</h2>
+    <div class="menu-grid">
+        <div class="card">
+            <img src="Nasi Goreng Wagyu.JPEG" alt="Nasi Goreng Wagyu">
+            <div class="card-info">
+                <div>
+                    <h3>Nasi Goreng Wagyu</h3>
+                    <p>Nasi goreng rempah dengan potongan daging sapi premium & telur mata sapi.</p>
+                </div>
+                <div>
+                    <span class="price">Rp 45.000</span>
+                    <button class="btn-buy" onclick="pesanWhatsApp('Nasi Goreng Wagyu', 'Rp 45.000')">Pesan Sekarang</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="Ayam Bakar.JPEG" alt="Ayam Bakar">
+            <div class="card-info">
+                <div>
+                    <h3>Ayam Bakar</h3>
+                    <p>Ayam kampung pilihan dengan olesan sambal yang meresap sempurna.</p>
+                </div>
+                <div>
+                    <span class="price">Rp 50.000</span>
+                    <button class="btn-buy" onclick="pesanWhatsApp('Ayam Bakar', 'Rp 50.000')">Pesan Sekarang</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="Soto Lamongan.JPEG" alt="Soto Lamongan">
+            <div class="card-info">
+                <div>
+                    <h3>Soto Lamongan</h3>
+                    <p>Aroma Kuah yang gurih dengan koya dan daun jeruk.</p>
+                </div>
+                <div>
+                    <span class="price">Rp 35.000</span>
+                    <button class="btn-buy" onclick="pesanWhatsApp('Soto Lamongan', 'Rp 35.000')">Pesan Sekarang</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="Ikan Bakar.JPEG" alt="Ikan Bakar">
+            <div class="card-info">
+                <div>
+                    <h3>Ikan Bakar</h3>
+                    <p>Ikan segar bakar dengan bumbu rempah meresap.</p>
+                </div>
+                <div>
+                    <span class="price">Rp 40.000</span>
+                    <button class="btn-buy" onclick="pesanWhatsApp('Ikan Bakar', 'Rp 40.000')">Pesan Sekarang</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2>— Refreshing Drinks —</h2>
+    <div class="menu-grid">
+        <div class="card">
+            <img src="Es Kopi Susu Gula Aren.JPEG" alt="Kopi Susu">
+            <div class="card-info">
+                <div>
+                    <h3>Es Kopi Susu Gula Aren</h3>
+                    <p>Espresso double shot dengan susu creamy dan gula aren organik.</p>
+                </div>
+                <div>
+                    <span class="price">Rp 25.000</span>
+                    <button class="btn-buy" onclick="pesanWhatsApp('Es Kopi Susu Gula Aren', 'Rp 25.000')">Pesan Sekarang</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="Es Lemon Tea.JPEG" alt="Es Lemon Tea">
+            <div class="card-info">
+                <div>
+                    <h3>Es Lemon Tea Mint</h3>
+                    <p>Teh hitam pilihan dengan perasan lemon segar dan daun mint.</p>
+                </div>
+                <div>
+                    <span class="price">Rp 20.000</span>
+                    <button class="btn-buy" onclick="pesanWhatsApp('Es Lemon Tea Mint', 'Rp 20.000')">Pesan Sekarang</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="Es Macha Latte.JPEG" alt="Macha Latte">
+            <div class="card-info">
+                <div>
+                    <h3>Es Macha Latte</h3>
+                    <p>Bubuk teh hijau Jepang premium dengan susu segar.</p>
+                </div>
+                <div>
+                    <span class="price">Rp 22.000</span>
+                    <button class="btn-buy" onclick="pesanWhatsApp('Es Macha Latte', 'Rp 22.000')">Pesan Sekarang</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="Es Kopi Americano.JPEG" alt="Es Kopi Americano">
+            <div class="card-info">
+                <div>
+                    <h3>Es Kopi Americano</h3>
+                    <p>Kopi hitam murni yang segar dan rendah kalori.</p>
+                </div>
+                <div>
+                    <span class="price">Rp 30.000</span>
+                    <button class="btn-buy" onclick="pesanWhatsApp('Es Kopi Americano', 'Rp 30.000')">Pesan Sekarang</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 40px; background: var(--dark); color: white; margin-top: 50px;">
+    &copy; 2026 Yannsz Kuliner. All Rights Reserved.
+</footer>
+
+<script>
+    function pesanWhatsApp(namaProduk, harga) {
+        // GANTI NOMOR DI BAWAH INI (Gunakan kode negara, misal 62812345678)
+        const nomorWA = "6285693279701"; 
+        
+        const teks = `Halo Yannsz Kuliner, saya ingin memesan:\n\n` +
+                     `*Menu:* ${namaProduk}\n` +
+                     `*Harga:* ${harga}\n\n` +
+                     `Mohon informasi selanjutnya. Terima kasih!`;
+        
+        const linkWA = `https://wa.me/${nomorWA}?text=${encodeURIComponent(teks)}`;
+        
+        window.open(linkWA, '_blank');
+    }
+</script>
+
+</body>
+</html>
